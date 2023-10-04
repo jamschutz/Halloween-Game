@@ -8,9 +8,12 @@ public class PlayerController : MonoBehaviour
     public LegInput[] legs;
     public float raisedLegHeight;
     public float jumpForce;
+    public float resetRotationTime = 0.5f;
 
     private Vector3 startingLegPosition;
     private Rigidbody rb;
+    private Quaternion targetResetRotation;
+    private float maxRotationDelta;
 
     private void Awake()
     {
@@ -19,6 +22,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        targetResetRotation = new Quaternion();
+        targetResetRotation.eulerAngles = Vector3.up;
+        maxRotationDelta = 180 / resetRotationTime;
+
         foreach(var leg in legs) {
             leg.startPos = leg.legObj.transform.localPosition;
             leg.forcePoint = leg.legObj.transform.GetChild(0);
@@ -28,19 +35,26 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Keypad0)) {
-            transform.eulerAngles = Vector3.up;
+        if(Input.GetKey(KeyCode.Keypad0)) {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetResetRotation, maxRotationDelta * Time.deltaTime);
+
+            if(Quaternion.Angle(transform.rotation, targetResetRotation) < 0.1f) {
+                rb.angularVelocity = Vector3.zero;
+            }
+        }
+        else {
+            foreach(var leg in legs) {
+                if(Input.GetKeyDown(GetLegKeycode(leg))) {
+                    leg.legObj.transform.localPosition = leg.startPos + (Vector3.up * raisedLegHeight);
+                }
+                if(Input.GetKeyUp(GetLegKeycode(leg))) {
+                    leg.legObj.transform.localPosition = leg.startPos;
+                    rb.AddForceAtPosition(transform.up * jumpForce, leg.forcePoint.position, ForceMode.Impulse);
+                }
+            }
         }
 
-        foreach(var leg in legs) {
-            if(Input.GetKeyDown(GetLegKeycode(leg))) {
-                leg.legObj.transform.localPosition = leg.startPos + (Vector3.up * raisedLegHeight);
-            }
-            if(Input.GetKeyUp(GetLegKeycode(leg))) {
-                leg.legObj.transform.localPosition = leg.startPos;
-                rb.AddForceAtPosition(transform.up * jumpForce, leg.forcePoint.position, ForceMode.Impulse);
-            }
-        }
+        
     }
 
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.36537403, g: 0.37004256, b: 0.34326562, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -741,12 +741,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916134732}
   m_LocalRotation: {x: 0.0019385987, y: 0.99739164, z: -0.065923594, w: 0.029329896}
-  m_LocalPosition: {x: -0.8513615, y: 5.0834146, z: 12.478601}
+  m_LocalPosition: {x: -0.8513615, y: 2.6634145, z: 12.478601}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 1773623109679819880}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1048937255
 GameObject:
@@ -896,14 +896,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236114685}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.121688604, y: 0.2676975, z: 0.41111574, w: 0.86285216}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.579, y: 34.198, z: 50.774}
 --- !u!1 &1368045201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1130,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625081752
 GameObject:
@@ -1519,8 +1519,9 @@ Transform:
   - {fileID: 606302365}
   - {fileID: 1625081753}
   - {fileID: 644234747}
+  - {fileID: 916134735}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1773623109679819881
 MonoBehaviour:
@@ -1564,7 +1565,8 @@ MonoBehaviour:
     startPos: {x: 0, y: 0, z: 0}
     forcePoint: {fileID: 0}
   raisedLegHeight: 0.3962163
-  jumpForce: 0.5
+  jumpForce: 1
+  resetRotationTime: 0.5
 --- !u!54 &1773623109679819882
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1602,7 +1604,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 6.511}
 --- !u!23 &6442363143316314523
 MeshRenderer:
