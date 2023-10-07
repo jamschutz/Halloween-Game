@@ -6,9 +6,10 @@ using UnityEngine;
 public class CollideWithWords : MonoBehaviour
 {
     public static bool addedAtLeastOneWord;
+    public string theWord;
+
     private EpitaphManager epitaphManager;
     private GameObject words;
-    private string theWord;
     private string newWords;
     private float typingSpeed =0.2f ;
     private bool added = false;
@@ -17,7 +18,7 @@ public class CollideWithWords : MonoBehaviour
     {
         epitaphManager = GameObject.Find("epitaphText").GetComponent<EpitaphManager>();
         words = transform.Find("Words").gameObject;
-        theWord = words.GetComponent<TextMeshPro>().text;
+        words.GetComponent<TextMeshPro>().text = theWord;
         addedAtLeastOneWord = false;
     }
 
