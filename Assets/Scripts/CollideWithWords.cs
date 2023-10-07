@@ -5,21 +5,38 @@ using UnityEngine;
 
 public class CollideWithWords : MonoBehaviour
 {
-    private TextMeshProUGUI epitaphText;
-    private string newWord;
+    public static bool addedAtLeastOneWord;
+    private EpitaphManager epitaphManager;
+    private GameObject words;
+    private string theWord;
+    private string newWords;
+    private float typingSpeed =0.2f ;
+    private bool added = false;
 
     private void Start()
     {
-        epitaphText = GameObject.Find("epitaphText").GetComponent<TextMeshProUGUI>();
-        newWord = transform.Find("Words").GetComponent<TextMeshPro>().text;
+        epitaphManager = GameObject.Find("epitaphText").GetComponent<EpitaphManager>();
+        words = transform.Find("Words").gameObject;
+        theWord = words.GetComponent<TextMeshPro>().text;
+        addedAtLeastOneWord = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && !added)
         {
-            epitaphText.text = epitaphText.text + " " + newWord;
-            Destroy(gameObject);
+            if (!addedAtLeastOneWord)
+            {
+                newWords = " " + theWord;
+                addedAtLeastOneWord = true;
+            }
+            else
+            {
+                newWords = ", " + theWord;
+            }
+            epitaphManager.AddNewWords(newWords);
+            added = true;
+            words.SetActive(false);
         }
     }
 
