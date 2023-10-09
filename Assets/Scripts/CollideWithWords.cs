@@ -33,7 +33,7 @@ public class CollideWithWords : MonoBehaviour
             }
             else
             {
-                newWords = ", " + theWord;
+                newWords = " " + theWord;
             }
             epitaphManager.AddNewWords(newWords);
             added = true;

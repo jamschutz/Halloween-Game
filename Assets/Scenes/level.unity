@@ -7389,7 +7389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1017799805
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13802,7 +13802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1448526398
 AudioListener:
   m_ObjectHideFlags: 0
@@ -14055,6 +14055,10 @@ PrefabInstance:
     - target: {fileID: 6953285330658321058, guid: 6a7f93875c12e1c449140919b0a2b3aa, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6953285330658321058, guid: 6a7f93875c12e1c449140919b0a2b3aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6953285330658321058, guid: 6a7f93875c12e1c449140919b0a2b3aa, type: 3}
       propertyPath: m_TagString
@@ -20096,26 +20100,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61bd42ed364b13c4bb36184267a3d5d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  words:
-  - LOVE
-  - PAIN
-  - LEADERSHIP
-  - GAMES
-  - AIRPORT
-  - LAKE
-  - PROTECTION
-  - DISASTER
-  - FOOTBALL
-  - CONNECTION
-  - FRIENDSHIP
-  - MATH
-  - WINNER
-  - LIBRARY
-  - CONCLUSION
-  - ENDING
+  words: []
+  nounsFile: {fileID: 4900000, guid: b5691f36d7fe0e84d8ea37cb4799afb2, type: 3}
+  verbsFile: {fileID: 4900000, guid: 89c0a61e103ea1c43976c917f7b81fcf, type: 3}
+  adjectivesFile: {fileID: 4900000, guid: c988baad260d96644b256f00faf7bd1d, type: 3}
+  prepositionsFile: {fileID: 4900000, guid: 2b226c08367c0c243b32e1a523a7c9d2, type: 3}
+  numNouns: 15
+  numVerbs: 15
+  numAdjectives: 12
+  numPrepositions: 10
   wordBrickPrefab: {fileID: 4168081070070220643, guid: f268def02d55aa24199d4560438fccc1, type: 3}
-  levelRangeX: 60
-  levelRangeZ: 60
+  levelRangeX: 180
+  levelRangeZ: 180
   groundScalingMax: 2
   groundScalingMin: 0.5
 --- !u!1 &2015584370
