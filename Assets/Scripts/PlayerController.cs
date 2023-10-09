@@ -44,10 +44,10 @@ public class PlayerController : MonoBehaviour
         }
         else {
             foreach(var leg in legs) {
-                if(Input.GetKeyDown(GetLegKeycode(leg))) {
+                if(Input.GetKeyDown(leg.key)) {
                     leg.legObj.transform.localPosition = leg.startPos + (Vector3.up * raisedLegHeight);
                 }
-                if(Input.GetKeyUp(GetLegKeycode(leg))) {
+                if(Input.GetKeyUp(leg.key)) {
                     leg.legObj.transform.localPosition = leg.startPos;
                     rb.AddForceAtPosition(transform.up * jumpForce, leg.forcePoint.position, ForceMode.Impulse);
                 }
@@ -59,32 +59,11 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private KeyCode GetLegKeycode(LegInput leg)
-    {
-        switch(leg.numKey) {
-            case 0: return KeyCode.Keypad0;
-            case 1: return KeyCode.Keypad1;
-            case 2: return KeyCode.Keypad2;
-            case 3: return KeyCode.Keypad3;
-            case 4: return KeyCode.Keypad4;
-            case 5: return KeyCode.Keypad5;
-            case 6: return KeyCode.Keypad6;
-            case 7: return KeyCode.Keypad7;
-            case 8: return KeyCode.Keypad8;
-            case 9: return KeyCode.Keypad9;
-        }
-
-        Debug.LogError($"bad number for leg input: {leg.numKey}");
-        return KeyCode.Keypad0;
-    }
-
-
-
 
     [System.Serializable]
     public class LegInput
     {
-        public int numKey;
+        public string key;
         public GameObject legObj;
         public Vector3 startPos;
         public Transform forcePoint;

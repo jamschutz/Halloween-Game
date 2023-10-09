@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36537403, g: 0.37004256, b: 0.34326562, a: 1}
+  m_IndirectSpecularColor: {r: 0.3653744, g: 0.3700428, b: 0.34326565, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 480244238}
   - component: {fileID: 480244240}
   m_Layer: 0
-  m_Name: GhostFoot - middleBackLeft
+  m_Name: GhostFoot - frontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 596104853}
   - component: {fileID: 596104855}
   m_Layer: 0
-  m_Name: GhostFoot - center
+  m_Name: GhostFoot - middleCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 606302366}
   - component: {fileID: 606302368}
   m_Layer: 0
-  m_Name: GhostFoot - middleFrontRight
+  m_Name: GhostFoot - backRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 666751566}
   - component: {fileID: 666751568}
   m_Layer: 0
-  m_Name: GhostFoot - front
+  m_Name: GhostFoot - middleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,12 +741,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916134732}
   m_LocalRotation: {x: 0.0019385987, y: 0.99739164, z: -0.065923594, w: 0.029329896}
-  m_LocalPosition: {x: -0.8513615, y: 2.6634145, z: 12.478601}
+  m_LocalPosition: {x: -0.8513615, y: 5.0834146, z: 12.478601}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1773623109679819880}
-  m_RootOrder: 10
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1048937255
 GameObject:
@@ -917,7 +917,7 @@ GameObject:
   - component: {fileID: 1368045203}
   - component: {fileID: 1368045205}
   m_Layer: 0
-  m_Name: GhostFoot - middleBackRight
+  m_Name: GhostFoot - backLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1259,7 +1259,7 @@ GameObject:
   - component: {fileID: 1832293325}
   - component: {fileID: 1832293327}
   m_Layer: 0
-  m_Name: GhostFoot - middleFrontLeft
+  m_Name: GhostFoot - frontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1519,9 +1519,8 @@ Transform:
   - {fileID: 606302365}
   - {fileID: 1625081753}
   - {fileID: 644234747}
-  - {fileID: 916134735}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1773623109679819881
 MonoBehaviour:
@@ -1536,31 +1535,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   legs:
-  - numKey: 2
+  - key: g
     legObj: {fileID: 7161369870546478750}
     startPos: {x: 0, y: 0, z: 0}
     forcePoint: {fileID: 0}
-  - numKey: 8
+  - key: j
     legObj: {fileID: 666751564}
     startPos: {x: 0, y: 0, z: 0}
     forcePoint: {fileID: 0}
-  - numKey: 5
+  - key: h
     legObj: {fileID: 596104851}
     startPos: {x: 0, y: 0, z: 0}
     forcePoint: {fileID: 0}
-  - numKey: 1
+  - key: y
     legObj: {fileID: 480244236}
     startPos: {x: 0, y: 0, z: 0}
     forcePoint: {fileID: 0}
-  - numKey: 7
+  - key: u
     legObj: {fileID: 1832293323}
     startPos: {x: 0, y: 0, z: 0}
     forcePoint: {fileID: 0}
-  - numKey: 3
+  - key: b
     legObj: {fileID: 1368045201}
     startPos: {x: 0, y: 0, z: 0}
     forcePoint: {fileID: 0}
-  - numKey: 9
+  - key: n
     legObj: {fileID: 606302364}
     startPos: {x: 0, y: 0, z: 0}
     forcePoint: {fileID: 0}
@@ -1684,7 +1683,7 @@ GameObject:
   - component: {fileID: 57103320521455081}
   - component: {fileID: 7440896262155057170}
   m_Layer: 0
-  m_Name: GhostFoot - back
+  m_Name: GhostFoot - middleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
