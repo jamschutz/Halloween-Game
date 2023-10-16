@@ -21,7 +21,8 @@ public class EpitaphManager : MonoBehaviour
     private TextMeshProUGUI epitaphText02;
     private TextMeshProUGUI epitaphText03;
     private Coroutine displayWordCorountine;
-
+    private bool end;
+    private int rand;
     private void Start()
     {
         epitaphText01 = GetComponent<TextMeshProUGUI>();
@@ -38,11 +39,14 @@ public class EpitaphManager : MonoBehaviour
 
         for (int j = 0; j < howManyTemplate; j++)
         {
-            epitaphTemplateIndex[j] = Random.Range(0, howManyTemplate);
-            /*while (epitaphTemplateIndex.Contains(epitaphTemplateIndex[j]))
+            rand = Random.Range(0, howManyTemplate);
+            while (epitaphTemplateIndex.Contains(rand))
             {
-                epitaphTemplateIndex[j] = Random.Range(0, howManyTemplate);
-            }*/
+                rand = Random.Range(0, howManyTemplate);
+            }
+
+            epitaphTemplateIndex[j]= rand;
+
         }
 
         currentEpitaph01 = epitaphTemplate[epitaphTemplateIndex[0]];
@@ -52,19 +56,29 @@ public class EpitaphManager : MonoBehaviour
 
         epitaphText01.text = currentEpitaph01;
         howManywordsYouGot = 0;
+        end = false;
     }
 
     public void AddNewWords(string newWords)
     {
-        howManywordsYouGot++;
+        if (end) return;
 
-        if (howManywordsYouGot == 4)
+        howManywordsYouGot++;
+        if (howManywordsYouGot >= 9)
         {
-            epitaphText02.text = currentEpitaph02;
-        }
-        if(howManywordsYouGot == 7)
-        {
+            currentEpitaph03 += newWords;
             epitaphText03.text = currentEpitaph03;
+            EndGame();
+            return;
+        }
+
+        if (howManywordsYouGot == 3)
+        {
+            Invoke("ShowLine02",1f);
+        }
+        if(howManywordsYouGot == 6)
+        {
+            Invoke("ShowLine03", 1f);
         }
 
 
@@ -103,8 +117,7 @@ public class EpitaphManager : MonoBehaviour
         }
 
 
-            
-        
+
     }
 
     public IEnumerator TypeOutNewWords(string line)
@@ -128,6 +141,22 @@ public class EpitaphManager : MonoBehaviour
             
             yield return new WaitForSeconds(typingSpeed);
         }
+    }
+
+    private void ShowLine02()
+    {
+        epitaphText02.text = currentEpitaph02;
+    }
+
+    private void ShowLine03()
+    {
+        epitaphText03.text = currentEpitaph03;
+    }
+
+    private void EndGame()
+    {
+        Debug.Log("END");
+        end = true;
     }
 
 }
