@@ -291,6 +291,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnForce: 100
   hoverForce: 0.5
+--- !u!114 &108060318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108060311}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b38d3a83f5c3b459961552d8f0f918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnForce: 150
+  hoverForce: 1
 --- !u!1 &124884993
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController_MOUSE : MonoBehaviour
+public class PlayerController_MOUSE2 : MonoBehaviour
 {
     public float turnForce;
     public float hoverForce;
@@ -10,8 +10,7 @@ public class PlayerController_MOUSE : MonoBehaviour
     private Rigidbody rb;
     private float angleX;
     private float angleY;
-
-    private string allKeys = "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./";
+    private Vector2 lastMousePos;
 
     private void Awake()
     {
@@ -24,23 +23,21 @@ public class PlayerController_MOUSE : MonoBehaviour
         angleY = transform.eulerAngles.y;
 
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
     }
 
 
     private void Update()
     {
-        Debug.Log($"got mouse x: {Input.GetAxis("Mouse X")}");
-        Debug.Log($"got mouse y: {Input.GetAxis("Mouse Y")}");
         angleX += turnForce * Input.GetAxis("Mouse Y") * Time.deltaTime;
         angleY += turnForce * Input.GetAxis("Mouse X") * Time.deltaTime;
-        transform.eulerAngles = new Vector3(angleX, angleY, transform.eulerAngles.z);
 
-        foreach(var key in allKeys) {
-            // Debug.Log("getting key: " + key);
-            if(Input.GetKeyDown(key.ToString())) {
-                rb.AddForce(transform.up * hoverForce, ForceMode.Impulse);
-            }
+        if(Input.GetMouseButton(0) || Input.GetMouseButton(1)) {
+            float mouseDelta = Vector2.Distance(lastMousePos, Input.mousePosition);
+            rb.AddForce(transform.up * hoverForce * mouseDelta * Time.deltaTime, ForceMode.Impulse);
         }
+        else {
+            transform.eulerAngles = new Vector3(angleX, angleY, transform.eulerAngles.z);
+        }
+        lastMousePos = Input.mousePosition;
     }
 }
