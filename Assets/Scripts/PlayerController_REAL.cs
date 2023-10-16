@@ -55,14 +55,14 @@ public class PlayerController_REAL : MonoBehaviour
         if(Input.GetKey(KeyCode.RightArrow)) {
             angleY += turnForce * Time.deltaTime;
         }
-        // rotate up
-        if(Input.GetKey(KeyCode.UpArrow)) {
-            angleX -= turnForce * Time.deltaTime;
-        }
-        // rotate down
-        if(Input.GetKey(KeyCode.DownArrow)) {
-            angleX += turnForce * Time.deltaTime;
-        }
+        // // rotate up
+        // if(Input.GetKey(KeyCode.UpArrow)) {
+        //     angleX -= turnForce * Time.deltaTime;
+        // }
+        // // rotate down
+        // if(Input.GetKey(KeyCode.DownArrow)) {
+        //     angleX += turnForce * Time.deltaTime;
+        // }
         transform.eulerAngles = new Vector3(angleX, angleY, transform.eulerAngles.z);
 
     }
