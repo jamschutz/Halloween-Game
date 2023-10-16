@@ -8248,7 +8248,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1017799806
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8357,7 +8357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingSpeed: 5
-  jumpForce: 250
+  jumpForce: 400
   numJumpsAllowed: 25
   turnForce: 80
 --- !u!1 &1026746295
@@ -21669,7 +21669,7 @@ MonoBehaviour:
   inputText: {fileID: 81559337}
   nameText: {fileID: 1026746297}
   mainCamera: {fileID: 683715995}
-  secondsYouCanPlay: 1
+  secondsYouCanPlay: 120
   timerText: {fileID: 293490696}
 --- !u!4 &2003356029
 Transform:

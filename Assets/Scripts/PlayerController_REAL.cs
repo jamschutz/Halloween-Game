@@ -40,7 +40,7 @@ public class PlayerController_REAL : MonoBehaviour
             rb.AddRelativeForce(-movingSpeed, 0, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && jumpsUsed < numJumpsAllowed)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(0, jumpForce, 0);
             jumpsUsed++;
