@@ -15,6 +15,8 @@ public class EpitaphManager : MonoBehaviour
     public Coroutine displayWordsCorountine;
     public int howManyTemplate;
     public string underLine;
+    public string theDate;
+    public GameObject howToPlay;
 
     private int[] epitaphTemplateIndex;
     private int howManywordsYouGot;
@@ -24,14 +26,23 @@ public class EpitaphManager : MonoBehaviour
     private Coroutine displayWordCorountine;
     private bool end;
     private int rand;
+    private GameObject player;
+    private Camera secondCamera;
+    private TextMeshPro epitaphOnStone;
+    private TextMeshPro date;
+    
     private void Start()
     {
         epitaphText01 = GetComponent<TextMeshProUGUI>();
         epitaphText02 = transform.Find("epitaphText02").GetComponent<TextMeshProUGUI>();
         epitaphText03 = transform.Find("epitaphText03").GetComponent<TextMeshProUGUI>();
+        player = GameObject.FindWithTag("Player");
+        secondCamera = GameObject.Find("secondCamera").GetComponentInParent<Camera>();
+        date = GameObject.Find("date").GetComponent<TextMeshPro>();
+        epitaphOnStone = GameObject.Find("epitaphOnStone").GetComponent<TextMeshPro>();
 
         //pick three
-        epitaphTemplateIndex= new int[howManyTemplate];
+        epitaphTemplateIndex = new int[howManyTemplate];
 
         for (int i = 0; i < howManyTemplate; i++)
         {
@@ -55,7 +66,7 @@ public class EpitaphManager : MonoBehaviour
         currentEpitaph03 = epitaphTemplate[epitaphTemplateIndex[2]];
 
 
-        epitaphText01.text = currentEpitaph01 + underLine + underLine + underLine;
+        
         howManywordsYouGot = 0;
         end = false;
     }
@@ -157,6 +168,11 @@ public class EpitaphManager : MonoBehaviour
 
     }
 
+    public void ShowLine01()
+    {
+        epitaphText01.text = currentEpitaph01 + underLine + underLine + underLine;
+    }
+
     private void ShowLine02()
     {
         epitaphText02.text = currentEpitaph02 + underLine + underLine + underLine;
@@ -169,8 +185,13 @@ public class EpitaphManager : MonoBehaviour
 
     private void EndGame()
     {
-        Debug.Log("END");
+        howToPlay.SetActive(false);
+        player.SetActive(false);
+        secondCamera.gameObject.SetActive(true);
+        date.text = theDate;
+        epitaphOnStone.text = currentEpitaph01+ "\n" + currentEpitaph02 + "\n" + currentEpitaph03;
         end = true;
+        gameObject.SetActive(false);
     }
 
 }
