@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,7 @@ public class EpitaphManager : MonoBehaviour
     private Camera secondCamera;
     private TextMeshPro epitaphOnStone;
     private TextMeshPro date;
+    private DateTime earliestDate = new DateTime(1887, 1, 1);
     
     private void Start()
     {
@@ -54,10 +56,10 @@ public class EpitaphManager : MonoBehaviour
 
         for (int j = 0; j < howManyTemplate; j++)
         {
-            rand = Random.Range(0, howManyTemplate);
+            rand = UnityEngine.Random.Range(0, howManyTemplate);
             while (epitaphTemplateIndex.Contains(rand))
             {
-                rand = Random.Range(0, howManyTemplate);
+                rand = UnityEngine.Random.Range(0, howManyTemplate);
             }
 
             epitaphTemplateIndex[j]= rand;
@@ -188,12 +190,18 @@ public class EpitaphManager : MonoBehaviour
 
     public void EndGame()
     {
+        if(end) return;
+        
         timerText.SetActive(false);
         howToPlay.SetActive(false);
         player.SetActive(false);
         secondCamera.gameObject.SetActive(true);
         replayButton.SetActive(true);
-        date.text = theDate;
+        // date.text = theDate;
+        int month = UnityEngine.Random.Range(1, 12);
+        int day = UnityEngine.Random.Range(1, 28);
+        int year = UnityEngine.Random.Range(1887, 2003);
+        date.text = $"{GetMonth(month)} {day}, {year} - October 21, 2023";
 
         if (howManywordsYouGot == 0)
         {
@@ -219,6 +227,27 @@ public class EpitaphManager : MonoBehaviour
     public void ReplayGame()
     {
         SceneManager.LoadScene(0);
+    }
+
+
+    private string GetMonth(int m)
+    {
+        switch(m) {
+            case 1: return "January";
+            case 2: return "February";
+            case 3: return "March";
+            case 4: return "April";
+            case 5: return "May";
+            case 6: return "June";
+            case 7: return "July";
+            case 8: return "August";
+            case 9: return "September";
+            case 10: return "October";
+            case 11: return "November";
+            case 12: return "December";
+        }
+
+        return "January";
     }
 
 }

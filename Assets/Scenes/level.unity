@@ -21669,7 +21669,7 @@ MonoBehaviour:
   inputText: {fileID: 81559337}
   nameText: {fileID: 1026746297}
   mainCamera: {fileID: 683715995}
-  secondsYouCanPlay: 10
+  secondsYouCanPlay: 1
   timerText: {fileID: 293490696}
 --- !u!4 &2003356029
 Transform:
