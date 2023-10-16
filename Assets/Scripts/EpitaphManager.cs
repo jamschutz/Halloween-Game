@@ -183,13 +183,29 @@ public class EpitaphManager : MonoBehaviour
         epitaphText03.text = currentEpitaph03 + underLine + underLine + underLine;
     }
 
-    private void EndGame()
+    public void EndGame()
     {
         howToPlay.SetActive(false);
         player.SetActive(false);
         secondCamera.gameObject.SetActive(true);
         date.text = theDate;
-        epitaphOnStone.text = currentEpitaph01+ "\n" + currentEpitaph02 + "\n" + currentEpitaph03;
+
+        if (howManywordsYouGot == 0)
+        {
+            epitaphOnStone.text = currentEpitaph01 +  " NOTHING\n" + currentEpitaph02 + " NOTHING\n" + currentEpitaph03 + " NOTHING";
+        }
+        else if (howManywordsYouGot <= 3)
+        {
+            epitaphOnStone.text = currentEpitaph01 + "\n" + currentEpitaph02 + " NOTHING\n" + currentEpitaph03 + " NOTHING";
+        }
+        else if(howManywordsYouGot <= 6)
+        {
+            epitaphOnStone.text = currentEpitaph01 + "\n" + currentEpitaph02 + "\n" + currentEpitaph03 + " NOTHING";
+        }
+        else
+        {
+            epitaphOnStone.text = currentEpitaph01 + "\n" + currentEpitaph02 + "\n" + currentEpitaph03;
+        }
         end = true;
         gameObject.SetActive(false);
     }

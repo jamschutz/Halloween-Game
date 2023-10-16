@@ -20543,6 +20543,8 @@ MonoBehaviour:
   inputText: {fileID: 81559337}
   nameText: {fileID: 1026746297}
   mainCamera: {fileID: 683715995}
+  secondsYouCanPlay: 25
+  timer: 0
 --- !u!4 &2003356029
 Transform:
   m_ObjectHideFlags: 0
