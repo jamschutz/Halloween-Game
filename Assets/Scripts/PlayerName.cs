@@ -10,7 +10,7 @@ public class PlayerName : MonoBehaviour
     public TextMeshPro nameText;
     public Camera mainCamera;
     public float secondsYouCanPlay;
-    public float timer;
+    public TextMeshProUGUI timerText;
 
     private GenerateLevel levelGenerator;
     private EpitaphManager epitaphManager;
@@ -23,17 +23,19 @@ public class PlayerName : MonoBehaviour
         epitaphManager = GameObject.Find("epitaphText").GetComponent<EpitaphManager>();
         tempPlayerController = GameObject.FindWithTag("Player").GetComponent<TempPlayerController>();
         secondCamera = GameObject.Find("secondCamera").GetComponentInParent<Camera>();
-        timer = 0;
+        
     }
 
     private void Update()
     {
-        if(gameStart)timer += Time.deltaTime;
+        if(gameStart) secondsYouCanPlay -= Time.deltaTime;
 
+        timerText.text = "TIME BEFORE GO TO HEAVEN: " + (int)secondsYouCanPlay;
 
-        if(timer > secondsYouCanPlay)
+        if (secondsYouCanPlay < 0)
         {
             epitaphManager.EndGame();
+            timerText.gameObject.SetActive(false);
         }
 
     }
@@ -55,6 +57,7 @@ public class PlayerName : MonoBehaviour
         tempPlayerController.enabled = true;
         mainCamera.gameObject.SetActive(true);
         secondCamera.gameObject.SetActive(false);
+        timerText.gameObject.SetActive(true);
         gameStart = true;
     }
 
