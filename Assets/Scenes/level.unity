@@ -293,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -380}
+  m_AnchoredPosition: {x: 0, y: -754}
   m_SizeDelta: {x: 1920, y: 198.0128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124884996
@@ -544,18 +544,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   epitaphTemplate:
-  - '1 '
-  - 2
-  - 3
-  - 4
-  - 5
+  - A SOUL OF
+  - WAS REMEMBERED AS A
+  - LOVES
+  - HATES
+  - USED TO
   typingSpeed: 0.15
   currentEpitaph01: 
   currentEpitaph02: 
   currentEpitaph03: 
   howManyTemplate: 3
   underLine: ' _____ '
-  theDate: 2023.10.21
+  theDate: 'Oct 21, 1995 - Oct 21, 2023 '
   howToPlay: {fileID: 476578547}
 --- !u!43 &297600680
 Mesh:
@@ -20410,7 +20410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -206}
+  m_AnchoredPosition: {x: 0, y: -380}
   m_SizeDelta: {x: 1920, y: 198.0128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1920859694
@@ -20442,8 +20442,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280229663
-  m_fontColor: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+    rgba: 3189710623
+  m_fontColor: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 0.74509805}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
