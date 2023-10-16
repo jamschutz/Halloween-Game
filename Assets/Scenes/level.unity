@@ -8047,7 +8047,7 @@ MonoBehaviour:
   movingSpeed: 5
   jumpForce: 250
   numJumpsAllowed: 25
-  turnForce: 25
+  turnForce: 80
 --- !u!1 &1026746295
 GameObject:
   m_ObjectHideFlags: 0
@@ -20915,9 +20915,9 @@ MonoBehaviour:
   numAdjectives: 12
   numPrepositions: 10
   wordBrickPrefab: {fileID: 4168081070070220643, guid: f268def02d55aa24199d4560438fccc1, type: 3}
-  levelRangeX: 25
-  levelRangeY: 400
-  levelRangeZ: 25
+  levelRangeX: 100
+  levelRangeY: 1000
+  levelRangeZ: 100
   groundScalingMax: 2
   groundScalingMin: 0.5
 --- !u!1 &2015584370
