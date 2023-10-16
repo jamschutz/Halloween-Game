@@ -304,7 +304,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnForce: 150
-  hoverForce: 1
+  hoverForce: 0.2
+--- !u!114 &108060319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108060311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04078c6ef515cc2469175330329667da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingSpeed: 5
+  jumpForce: 100
+  numJumpsAllowed: 25
 --- !u!1 &124884993
 GameObject:
   m_ObjectHideFlags: 0
@@ -14625,6 +14640,14 @@ PrefabInstance:
     - target: {fileID: 7725037337618593816, guid: 6a7f93875c12e1c449140919b0a2b3aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725037337618593818, guid: 6a7f93875c12e1c449140919b0a2b3aa, type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725037337618593818, guid: 6a7f93875c12e1c449140919b0a2b3aa, type: 3}
+      propertyPath: m_Mass
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8334461233667687139, guid: 6a7f93875c12e1c449140919b0a2b3aa, type: 3}
       propertyPath: m_TagString
