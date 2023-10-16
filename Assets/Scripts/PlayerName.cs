@@ -14,14 +14,14 @@ public class PlayerName : MonoBehaviour
 
     private GenerateLevel levelGenerator;
     private EpitaphManager epitaphManager;
-    private TempPlayerController tempPlayerController;
+    private PlayerController_NEW tempPlayerController;
     private Camera secondCamera;
     private bool gameStart;
     private void Start()
     {
         levelGenerator = GetComponent<GenerateLevel>();
         epitaphManager = GameObject.Find("epitaphText").GetComponent<EpitaphManager>();
-        tempPlayerController = GameObject.FindWithTag("Player").GetComponent<TempPlayerController>();
+        tempPlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController_NEW>();
         secondCamera = GameObject.Find("secondCamera").GetComponentInParent<Camera>();
         
     }

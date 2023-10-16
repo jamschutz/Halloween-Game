@@ -22,7 +22,7 @@ public class GenerateLevel : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
 
         LoadWords();
         foreach (string word in words)
