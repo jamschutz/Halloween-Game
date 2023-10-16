@@ -20897,9 +20897,9 @@ MonoBehaviour:
   numAdjectives: 12
   numPrepositions: 10
   wordBrickPrefab: {fileID: 4168081070070220643, guid: f268def02d55aa24199d4560438fccc1, type: 3}
-  levelRangeX: 180
-  levelRangeY: 20
-  levelRangeZ: 180
+  levelRangeX: 25
+  levelRangeY: 400
+  levelRangeZ: 25
   groundScalingMax: 2
   groundScalingMin: 0.5
 --- !u!1 &2015584370
