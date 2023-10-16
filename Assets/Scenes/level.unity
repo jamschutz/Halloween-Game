@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   epitaphTemplate:
-  - 1
+  - '1 '
   - 2
   - 3
   - 4
@@ -554,6 +554,7 @@ MonoBehaviour:
   currentEpitaph02: 
   currentEpitaph03: 
   howManyTemplate: 3
+  underLine: ' _____ '
 --- !u!43 &297600680
 Mesh:
   m_ObjectHideFlags: 0
@@ -1327,7 +1328,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-141874
+  m_Name: pb_Mesh19932
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

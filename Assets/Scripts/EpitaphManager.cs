@@ -14,6 +14,7 @@ public class EpitaphManager : MonoBehaviour
     public string currentEpitaph03;
     public Coroutine displayWordsCorountine;
     public int howManyTemplate;
+    public string underLine;
 
     private int[] epitaphTemplateIndex;
     private int howManywordsYouGot;
@@ -54,7 +55,7 @@ public class EpitaphManager : MonoBehaviour
         currentEpitaph03 = epitaphTemplate[epitaphTemplateIndex[2]];
 
 
-        epitaphText01.text = currentEpitaph01;
+        epitaphText01.text = currentEpitaph01 + underLine + underLine + underLine;
         howManywordsYouGot = 0;
         end = false;
     }
@@ -84,6 +85,8 @@ public class EpitaphManager : MonoBehaviour
 
         if (howManywordsYouGot>=7)
         {
+            epitaphText03.text = currentEpitaph03;
+
             if (displayWordCorountine != null)
             {
                 StopCoroutine(displayWordCorountine);
@@ -95,6 +98,8 @@ public class EpitaphManager : MonoBehaviour
         }
         else if (howManywordsYouGot<7 && howManywordsYouGot>=4)
         {
+            epitaphText02.text = currentEpitaph02;
+
             if (displayWordCorountine != null)
             {
                 StopCoroutine(displayWordCorountine);
@@ -106,6 +111,8 @@ public class EpitaphManager : MonoBehaviour
         }
         else
         {
+            epitaphText01.text = currentEpitaph01;
+
             if (displayWordCorountine != null)
             {
                 StopCoroutine(displayWordCorountine);
@@ -136,21 +143,28 @@ public class EpitaphManager : MonoBehaviour
             {
                 epitaphText01.text += c;
             }
-
-
-            
             yield return new WaitForSeconds(typingSpeed);
         }
+
+        if(howManywordsYouGot==1) epitaphText01.text = epitaphText01.text + underLine + underLine;
+        if (howManywordsYouGot == 2) epitaphText01.text = epitaphText01.text + underLine;
+        if(howManywordsYouGot==4) epitaphText02.text = epitaphText02.text + underLine + underLine;
+        if (howManywordsYouGot == 5) epitaphText02.text = epitaphText02.text + underLine;
+        if(howManywordsYouGot==7) epitaphText03.text = epitaphText03.text + underLine + underLine;
+        if (howManywordsYouGot == 8) epitaphText03.text = epitaphText03.text + underLine;
+
+
+
     }
 
     private void ShowLine02()
     {
-        epitaphText02.text = currentEpitaph02;
+        epitaphText02.text = currentEpitaph02 + underLine + underLine + underLine;
     }
 
     private void ShowLine03()
     {
-        epitaphText03.text = currentEpitaph03;
+        epitaphText03.text = currentEpitaph03 + underLine + underLine + underLine;
     }
 
     private void EndGame()
