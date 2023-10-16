@@ -16,7 +16,7 @@ public class GenerateLevel : MonoBehaviour
     public int numAdjectives;
     public int numPrepositions;
     public GameObject wordBrickPrefab;
-    public float levelRangeX, levelRangeZ;
+    public float levelRangeX, levelRangeY, levelRangeZ;
     public float groundScalingMax, groundScalingMin;
     private GameObject player;
 
@@ -30,8 +30,8 @@ public class GenerateLevel : MonoBehaviour
             GameObject wordBricks = Instantiate(wordBrickPrefab);
             wordBricks.GetComponent<CollideWithWords>().theWord = word;
             wordBricks.transform.position = new Vector3(
-                Random.Range(player.transform.position.x+levelRangeX / 2, player.transform.position.x - levelRangeX / 2), 
-                0.5f, 
+                Random.Range(player.transform.position.x+levelRangeX / 2, player.transform.position.x - levelRangeX / 2),
+                Random.Range(player.transform.position.y + levelRangeY / 2, player.transform.position.y - levelRangeY / 2),
                 Random.Range(player.transform.position.z + levelRangeZ / 2, player.transform.position.z - levelRangeZ / 2));
 
             GameObject cylinder = wordBricks.transform.Find("Cylinder").gameObject;

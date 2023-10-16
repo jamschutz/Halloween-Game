@@ -20111,6 +20111,7 @@ MonoBehaviour:
   numPrepositions: 10
   wordBrickPrefab: {fileID: 4168081070070220643, guid: f268def02d55aa24199d4560438fccc1, type: 3}
   levelRangeX: 180
+  levelRangeY: 20
   levelRangeZ: 180
   groundScalingMax: 2
   groundScalingMin: 0.5
