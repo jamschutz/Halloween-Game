@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EpitaphManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class EpitaphManager : MonoBehaviour
     public string theDate;
     public GameObject howToPlay;
     public GameObject timerText;
+    public GameObject replayButton;
 
     private int[] epitaphTemplateIndex;
     private int howManywordsYouGot;
@@ -190,6 +192,7 @@ public class EpitaphManager : MonoBehaviour
         howToPlay.SetActive(false);
         player.SetActive(false);
         secondCamera.gameObject.SetActive(true);
+        replayButton.SetActive(true);
         date.text = theDate;
 
         if (howManywordsYouGot == 0)
@@ -210,6 +213,12 @@ public class EpitaphManager : MonoBehaviour
         }
         end = true;
         gameObject.SetActive(false);
+    }
+
+
+    public void ReplayGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }
