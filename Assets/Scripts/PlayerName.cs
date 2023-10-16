@@ -35,7 +35,6 @@ public class PlayerName : MonoBehaviour
         if (secondsYouCanPlay < 0)
         {
             epitaphManager.EndGame();
-            timerText.gameObject.SetActive(false);
         }
 
     }

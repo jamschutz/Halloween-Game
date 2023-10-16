@@ -755,6 +755,7 @@ MonoBehaviour:
   underLine: ' _____ '
   theDate: 'Oct 21, 1995 - Oct 21, 2023 '
   howToPlay: {fileID: 476578547}
+  timerText: {fileID: 293490694}
 --- !u!43 &297600680
 Mesh:
   m_ObjectHideFlags: 0

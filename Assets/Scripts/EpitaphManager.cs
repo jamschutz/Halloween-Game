@@ -17,6 +17,7 @@ public class EpitaphManager : MonoBehaviour
     public string underLine;
     public string theDate;
     public GameObject howToPlay;
+    public GameObject timerText;
 
     private int[] epitaphTemplateIndex;
     private int howManywordsYouGot;
@@ -185,6 +186,7 @@ public class EpitaphManager : MonoBehaviour
 
     public void EndGame()
     {
+        timerText.SetActive(false);
         howToPlay.SetActive(false);
         player.SetActive(false);
         secondCamera.gameObject.SetActive(true);
