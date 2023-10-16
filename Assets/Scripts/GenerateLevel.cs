@@ -31,7 +31,7 @@ public class GenerateLevel : MonoBehaviour
             wordBricks.GetComponent<CollideWithWords>().theWord = word;
             wordBricks.transform.position = new Vector3(
                 Random.Range(player.transform.position.x+levelRangeX / 2, player.transform.position.x - levelRangeX / 2),
-                Random.Range(player.transform.position.y + levelRangeY / 2, player.transform.position.y - levelRangeY / 2),
+                Random.Range(player.transform.position.y, player.transform.position.y - levelRangeY),
                 Random.Range(player.transform.position.z + levelRangeZ / 2, player.transform.position.z - levelRangeZ / 2));
 
             GameObject cylinder = wordBricks.transform.Find("Cylinder").gameObject;
