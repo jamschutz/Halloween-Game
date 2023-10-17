@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8603951, g: 0.7786002, b: 0.6549473, a: 1}
+  m_IndirectSpecularColor: {r: 0.8603333, g: 0.77859706, b: 0.65487593, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21843,14 +21843,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   words: []
-  nounsFile: {fileID: 4900000, guid: b5691f36d7fe0e84d8ea37cb4799afb2, type: 3}
-  verbsFile: {fileID: 4900000, guid: 89c0a61e103ea1c43976c917f7b81fcf, type: 3}
-  adjectivesFile: {fileID: 4900000, guid: c988baad260d96644b256f00faf7bd1d, type: 3}
+  nounsFile: {fileID: 4900000, guid: 0962c62e691db034ea0a16c8e135e0fe, type: 3}
+  verbsFile: {fileID: 4900000, guid: 542be675ab2250a4e8acd285a757f06a, type: 3}
+  adjectivesFile: {fileID: 4900000, guid: 60ccc5ffc1bdaac479d026d2c711d8ba, type: 3}
   prepositionsFile: {fileID: 4900000, guid: 2b226c08367c0c243b32e1a523a7c9d2, type: 3}
-  numNouns: 15
-  numVerbs: 15
-  numAdjectives: 12
-  numPrepositions: 10
+  numNouns: 30
+  numVerbs: 0
+  numAdjectives: 60
+  numPrepositions: 0
   wordBrickPrefab: {fileID: 4168081070070220643, guid: f268def02d55aa24199d4560438fccc1, type: 3}
   levelRangeX: 100
   levelRangeY: 1000

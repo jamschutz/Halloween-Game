@@ -102,14 +102,17 @@ public class GenerateLevel : MonoBehaviour
         var nouns = GetWordsInFile(nounsFile);
         var verbs = GetWordsInFile(verbsFile);
         var adjectives = GetWordsInFile(adjectivesFile);
-        var prepositions = GetWordsInFile(prepositionsFile);
+        // var prepositions = GetWordsInFile(prepositionsFile);
 
         var wordsToUse = GetRandomWords(nouns, numNouns);
         wordsToUse.AddRange(GetRandomWords(verbs, numVerbs));
         wordsToUse.AddRange(GetRandomWords(adjectives, numAdjectives));
-        wordsToUse.AddRange(GetRandomWords(prepositions, numPrepositions));
+        // wordsToUse.AddRange(GetRandomWords(prepositions, numPrepositions));
 
         words = wordsToUse.ToArray();
+        foreach(var word in words) {
+            Debug.Log($"got word: {word}");
+        }
     }
 
 
