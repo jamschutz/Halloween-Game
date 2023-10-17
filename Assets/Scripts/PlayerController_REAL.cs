@@ -8,6 +8,7 @@ public class PlayerController_REAL : MonoBehaviour
     public float jumpForce;
     public int numJumpsAllowed;
     public float turnForce;
+    public Animator animator;
 
     private Rigidbody rb;
     private int jumpsUsed;
@@ -23,7 +24,19 @@ public class PlayerController_REAL : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        //animation
+        if (rb.velocity != Vector3.zero)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+
+
+
+            if (Input.GetKey(KeyCode.W))
         {
             rb.AddRelativeForce(0, 0, movingSpeed);
         }
