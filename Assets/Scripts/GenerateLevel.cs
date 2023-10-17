@@ -20,6 +20,9 @@ public class GenerateLevel : MonoBehaviour
     public float groundScalingMax, groundScalingMin;
     public float cylinderScalingMax, cylinderScalingMin;
     public Material[] mat;
+    [Header("clouds")]
+    public int cloudAmounts;
+    public GameObject[] cloudsPrefabs;
 
     private int matIndex;
     private GameObject player;
@@ -51,6 +54,31 @@ public class GenerateLevel : MonoBehaviour
                 cylinderScaling, 1, cylinderScaling);
 
         }
+
+        for (int i = 0; i < cloudAmounts; i++)
+        {
+            if(i%2 == 0)
+            {
+                GameObject clouds = Instantiate(cloudsPrefabs[0]);
+                clouds.transform.position = new Vector3(
+                Random.Range(player.transform.position.x + levelRangeX*3 , player.transform.position.x - levelRangeX * 3),
+                Random.Range(player.transform.position.y, player.transform.position.y - levelRangeY),
+                Random.Range(player.transform.position.z + levelRangeZ * 3, player.transform.position.z - levelRangeZ * 3));
+            }
+            else
+            {
+                GameObject clouds = Instantiate(cloudsPrefabs[1]);
+                clouds.transform.position = new Vector3(
+                Random.Range(player.transform.position.x + levelRangeX * 3, player.transform.position.x - levelRangeX * 3),
+                Random.Range(player.transform.position.y, player.transform.position.y - levelRangeY),
+                Random.Range(player.transform.position.z + levelRangeZ * 3, player.transform.position.z - levelRangeZ * 3));
+            }
+            
+
+
+        }
+
+
     }
 
 

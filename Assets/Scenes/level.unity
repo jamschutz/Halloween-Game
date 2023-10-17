@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.86039484, g: 0.7786002, b: 0.6549477, a: 1}
+  m_IndirectSpecularColor: {r: 0.8603951, g: 0.7786002, b: 0.6549473, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9382,7 +9382,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -16052,7 +16052,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -21865,6 +21865,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 23d0192792588e34ab464a2dfd6ab555, type: 2}
   - {fileID: 2100000, guid: 400dec9c8df0a8545b13dd508630db05, type: 2}
   - {fileID: 2100000, guid: d0b3162d4b0b0964b900854999cc892e, type: 2}
+  cloudAmounts: 25
+  cloudsPrefabs:
+  - {fileID: 100000, guid: fd368be74e0578d4a839c32767696a98, type: 3}
+  - {fileID: 100000, guid: 55e5e5bb19e9a76468cc67bbb65546c2, type: 3}
 --- !u!1 &2015584370
 GameObject:
   m_ObjectHideFlags: 0
