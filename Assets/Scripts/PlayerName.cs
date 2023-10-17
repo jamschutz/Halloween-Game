@@ -17,13 +17,14 @@ public class PlayerName : MonoBehaviour
     private PlayerController_REAL tempPlayerController;
     private Camera secondCamera;
     private bool gameStart;
+    private AudioSource musicPlayer;
     private void Start()
     {
         levelGenerator = GetComponent<GenerateLevel>();
         epitaphManager = GameObject.Find("epitaphText").GetComponent<EpitaphManager>();
         tempPlayerController = GameObject.FindWithTag("Player").GetComponent<PlayerController_REAL>();
         secondCamera = GameObject.Find("secondCamera").GetComponentInParent<Camera>();
-        
+        musicPlayer = GameObject.Find("musicPlayer").GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -47,6 +48,7 @@ public class PlayerName : MonoBehaviour
     public void StartGame()
     {
         Invoke("StartTheGame", 3f);
+        musicPlayer.Play();
     }
 
     private void StartTheGame()
@@ -57,6 +59,7 @@ public class PlayerName : MonoBehaviour
         mainCamera.gameObject.SetActive(true);
         secondCamera.gameObject.SetActive(false);
         timerText.gameObject.SetActive(true);
+        
         gameStart = true;
     }
 

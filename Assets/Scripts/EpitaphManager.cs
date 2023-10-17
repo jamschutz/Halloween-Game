@@ -35,7 +35,7 @@ public class EpitaphManager : MonoBehaviour
     private TextMeshPro epitaphOnStone;
     private TextMeshPro date;
     private DateTime earliestDate = new DateTime(1887, 1, 1);
-    
+
     private void Start()
     {
         epitaphText01 = GetComponent<TextMeshProUGUI>();
