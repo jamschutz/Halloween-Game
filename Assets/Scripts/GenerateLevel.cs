@@ -18,8 +18,10 @@ public class GenerateLevel : MonoBehaviour
     public GameObject wordBrickPrefab;
     public float levelRangeX, levelRangeY, levelRangeZ;
     public float groundScalingMax, groundScalingMin;
+    public float cylinderScalingMax, cylinderScalingMin;
     private GameObject player;
-    private float scaling;
+    private float wholePlatformScaling;
+    private float cylinderScaling;
 
     private void Start()
     {
@@ -35,10 +37,13 @@ public class GenerateLevel : MonoBehaviour
                 Random.Range(player.transform.position.y, player.transform.position.y - levelRangeY),
                 Random.Range(player.transform.position.z + levelRangeZ / 2, player.transform.position.z - levelRangeZ / 2));
 
+            wholePlatformScaling = Random.Range(groundScalingMax, groundScalingMin);
+            wordBricks.transform.localScale = new Vector3(wholePlatformScaling, wholePlatformScaling, wholePlatformScaling);
+
             GameObject cylinder = wordBricks.transform.Find("Cylinder").gameObject;
-            scaling = Random.Range(groundScalingMax, groundScalingMin);
+            cylinderScaling =  Random.Range(cylinderScalingMax, cylinderScalingMin);
             cylinder.transform.localScale = new Vector3(
-                scaling, 1, scaling);
+                cylinderScaling, 1, cylinderScaling);
 
         }
     }

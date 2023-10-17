@@ -21855,8 +21855,10 @@ MonoBehaviour:
   levelRangeX: 100
   levelRangeY: 1000
   levelRangeZ: 100
-  groundScalingMax: 2
+  groundScalingMax: 3
   groundScalingMin: 0.5
+  cylinderScalingMax: 2
+  cylinderScalingMin: 0.2
 --- !u!1 &2015584370
 GameObject:
   m_ObjectHideFlags: 0
@@ -25173,7 +25175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d8e4e2f73758b542bd43147eaa6ea31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.31
+      value: -0.96
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d8e4e2f73758b542bd43147eaa6ea31, type: 3}
       propertyPath: m_LocalPosition.z
