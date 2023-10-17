@@ -21859,6 +21859,12 @@ MonoBehaviour:
   groundScalingMin: 0.5
   cylinderScalingMax: 2
   cylinderScalingMin: 0.2
+  mat:
+  - {fileID: 2100000, guid: e779223ff4a7b42419478f64c030c942, type: 2}
+  - {fileID: 2100000, guid: 7ecea127dd5cf844fa9f35a056289f82, type: 2}
+  - {fileID: 2100000, guid: 23d0192792588e34ab464a2dfd6ab555, type: 2}
+  - {fileID: 2100000, guid: 400dec9c8df0a8545b13dd508630db05, type: 2}
+  - {fileID: 2100000, guid: d0b3162d4b0b0964b900854999cc892e, type: 2}
 --- !u!1 &2015584370
 GameObject:
   m_ObjectHideFlags: 0

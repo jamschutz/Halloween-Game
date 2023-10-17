@@ -19,6 +19,9 @@ public class GenerateLevel : MonoBehaviour
     public float levelRangeX, levelRangeY, levelRangeZ;
     public float groundScalingMax, groundScalingMin;
     public float cylinderScalingMax, cylinderScalingMin;
+    public Material[] mat;
+
+    private int matIndex;
     private GameObject player;
     private float wholePlatformScaling;
     private float cylinderScaling;
@@ -41,6 +44,8 @@ public class GenerateLevel : MonoBehaviour
             wordBricks.transform.localScale = new Vector3(wholePlatformScaling, wholePlatformScaling, wholePlatformScaling);
 
             GameObject cylinder = wordBricks.transform.Find("Cylinder").gameObject;
+            matIndex = Random.Range(0, mat.Length);
+            cylinder.GetComponent<MeshRenderer>().material = mat[matIndex];
             cylinderScaling =  Random.Range(cylinderScalingMax, cylinderScalingMin);
             cylinder.transform.localScale = new Vector3(
                 cylinderScaling, 1, cylinderScaling);
