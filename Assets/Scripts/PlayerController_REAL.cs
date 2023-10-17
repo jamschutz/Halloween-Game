@@ -25,7 +25,7 @@ public class PlayerController_REAL : MonoBehaviour
     void Update()
     {
         //animation
-        if (rb.velocity != Vector3.zero)
+        if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.S)|| Input.GetKey(KeyCode.D))
         {
             animator.SetBool("isMoving", true);
         }
@@ -36,7 +36,7 @@ public class PlayerController_REAL : MonoBehaviour
 
 
 
-            if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             rb.AddRelativeForce(0, 0, movingSpeed);
         }
@@ -56,6 +56,7 @@ public class PlayerController_REAL : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(0, jumpForce, 0);
+            animator.SetTrigger("jump");            
             jumpsUsed++;
         }
 
