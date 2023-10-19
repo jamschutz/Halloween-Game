@@ -13,12 +13,13 @@ public class CollideWithWords : MonoBehaviour
     private string newWords;
     private float typingSpeed =0.2f ;
     private bool added = false;
-
+    private AudioSource sound;
     private void Start()
     {
         epitaphManager = GameObject.Find("epitaphText").GetComponent<EpitaphManager>();
         words = transform.Find("Words").gameObject;
         words.GetComponent<TextMeshPro>().text = theWord;
+        sound = GameObject.Find("soundPlayer").GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +36,7 @@ public class CollideWithWords : MonoBehaviour
             }
             epitaphManager.AddNewWords(newWords,isNoun);
             added = true;
+            sound.Play();
             words.SetActive(false);
         }
     }
