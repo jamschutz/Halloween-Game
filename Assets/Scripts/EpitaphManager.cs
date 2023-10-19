@@ -11,11 +11,8 @@ public class EpitaphManager : MonoBehaviour
 {
     public string[] epitaphTemplate;
     public float typingSpeed;
-    public string currentEpitaph01;
-    public string currentEpitaph02;
-    public string currentEpitaph03;
+    public string currentEpitaph;
     public Coroutine displayWordsCorountine;
-    public int howManyTemplate;
     public string underLine;
     public string theDate;
     public GameObject howToPlay;
@@ -24,9 +21,8 @@ public class EpitaphManager : MonoBehaviour
 
     private int[] epitaphTemplateIndex;
     private int howManywordsYouGot;
-    private TextMeshProUGUI epitaphText01;
-    private TextMeshProUGUI epitaphText02;
-    private TextMeshProUGUI epitaphText03;
+    private int howManyEpitaphsYouGot;
+    private TextMeshProUGUI epitaphText;
     private Coroutine displayWordCorountine;
     private bool end;
     private int rand;
@@ -38,108 +34,73 @@ public class EpitaphManager : MonoBehaviour
 
     private void Start()
     {
-        epitaphText01 = GetComponent<TextMeshProUGUI>();
-        epitaphText02 = transform.Find("epitaphText02").GetComponent<TextMeshProUGUI>();
-        epitaphText03 = transform.Find("epitaphText03").GetComponent<TextMeshProUGUI>();
+        epitaphText = GetComponent<TextMeshProUGUI>();
         player = GameObject.FindWithTag("Player");
         secondCamera = GameObject.Find("secondCamera").GetComponentInParent<Camera>();
         date = GameObject.Find("date").GetComponent<TextMeshPro>();
         epitaphOnStone = GameObject.Find("epitaphOnStone").GetComponent<TextMeshPro>();
 
         //pick three
-        epitaphTemplateIndex = new int[howManyTemplate];
+        epitaphTemplateIndex = new int[epitaphTemplate.Length];
 
-        for (int i = 0; i < howManyTemplate; i++)
+        for (int i = 0; i < epitaphTemplate.Length; i++)
         {
-            epitaphTemplateIndex[i] = howManyTemplate+1;
+            epitaphTemplateIndex[i] = epitaphTemplate.Length + 1;
         }
 
-        for (int j = 0; j < howManyTemplate; j++)
+        for (int j = 0; j < epitaphTemplate.Length; j++)
         {
-            rand = UnityEngine.Random.Range(0, howManyTemplate);
+            rand = UnityEngine.Random.Range(0, epitaphTemplate.Length);
             while (epitaphTemplateIndex.Contains(rand))
             {
-                rand = UnityEngine.Random.Range(0, howManyTemplate);
+                rand = UnityEngine.Random.Range(0, epitaphTemplate.Length);
             }
 
             epitaphTemplateIndex[j]= rand;
 
         }
 
-        currentEpitaph01 = epitaphTemplate[epitaphTemplateIndex[0]];
-        currentEpitaph02 = epitaphTemplate[epitaphTemplateIndex[1]];
-        currentEpitaph03 = epitaphTemplate[epitaphTemplateIndex[2]];
-
-
+        currentEpitaph = epitaphTemplate[epitaphTemplateIndex[0]];
         
         howManywordsYouGot = 0;
+        howManyEpitaphsYouGot= 0;
         end = false;
     }
 
-    public void AddNewWords(string newWords)
+    public void AddNewWords(string newWords,bool isNoun)
     {
         if (end) return;
 
         howManywordsYouGot++;
-        if (howManywordsYouGot >= 9)
-        {
-            currentEpitaph03 += newWords;
-            epitaphText03.text = currentEpitaph03;
-            EndGame();
-            return;
-        }
 
-        if (howManywordsYouGot == 3)
-        {
-            Invoke("ShowLine02",1f);
-        }
-        if(howManywordsYouGot == 6)
-        {
-            Invoke("ShowLine03", 1f);
-        }
+        epitaphText.text = currentEpitaph;
 
-
-        if (howManywordsYouGot>=7)
+        if (isNoun)
         {
-            epitaphText03.text = currentEpitaph03;
+            howManyEpitaphsYouGot++;
 
             if (displayWordCorountine != null)
             {
                 StopCoroutine(displayWordCorountine);
-                epitaphText03.text = currentEpitaph03;
+                epitaphText.text = currentEpitaph;
             }
 
-            currentEpitaph03 += newWords;
-            displayWordCorountine = StartCoroutine(TypeOutNewWords(newWords));
-        }
-        else if (howManywordsYouGot<7 && howManywordsYouGot>=4)
-        {
-            epitaphText02.text = currentEpitaph02;
-
-            if (displayWordCorountine != null)
-            {
-                StopCoroutine(displayWordCorountine);
-                epitaphText02.text = currentEpitaph02;
-            }
-
-            currentEpitaph02 += newWords;
-            displayWordCorountine = StartCoroutine(TypeOutNewWords(newWords));
+            string newLine;
+            newLine = newWords + ".\n" + epitaphTemplate[howManyEpitaphsYouGot];
+            currentEpitaph += newLine;
+            displayWordCorountine = StartCoroutine(TypeOutNewWords(newLine));
         }
         else
         {
-            epitaphText01.text = currentEpitaph01;
-
             if (displayWordCorountine != null)
             {
                 StopCoroutine(displayWordCorountine);
-                epitaphText01.text = currentEpitaph01;
+                epitaphText.text = currentEpitaph;
             }
 
-            currentEpitaph01 += newWords;
+            currentEpitaph += newWords;
             displayWordCorountine = StartCoroutine(TypeOutNewWords(newWords));
         }
-
-
 
     }
 
@@ -147,46 +108,18 @@ public class EpitaphManager : MonoBehaviour
     {
         foreach (char c in line.ToCharArray())
         {
-            if (howManywordsYouGot >= 7)
-            {
-                epitaphText03.text += c;
-            }
-            else if(howManywordsYouGot<7 && howManywordsYouGot >= 4)
-            {
-                epitaphText02.text += c;
-            }
-            else
-            {
-                epitaphText01.text += c;
-            }
+            epitaphText.text += c;
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        if(howManywordsYouGot==1) epitaphText01.text = epitaphText01.text + underLine + underLine;
-        if (howManywordsYouGot == 2) epitaphText01.text = epitaphText01.text + underLine;
-        if(howManywordsYouGot==4) epitaphText02.text = epitaphText02.text + underLine + underLine;
-        if (howManywordsYouGot == 5) epitaphText02.text = epitaphText02.text + underLine;
-        if(howManywordsYouGot==7) epitaphText03.text = epitaphText03.text + underLine + underLine;
-        if (howManywordsYouGot == 8) epitaphText03.text = epitaphText03.text + underLine;
-
-
-
+        
     }
 
     public void ShowLine01()
     {
-        epitaphText01.text = currentEpitaph01 + underLine + underLine + underLine;
+        epitaphText.text = currentEpitaph + underLine + underLine + underLine;
     }
 
-    private void ShowLine02()
-    {
-        epitaphText02.text = currentEpitaph02 + underLine + underLine + underLine;
-    }
-
-    private void ShowLine03()
-    {
-        epitaphText03.text = currentEpitaph03 + underLine + underLine + underLine;
-    }
 
     public void EndGame()
     {
@@ -203,22 +136,7 @@ public class EpitaphManager : MonoBehaviour
         int year = UnityEngine.Random.Range(1887, 2003);
         date.text = $"{GetMonth(month)} {day}, {year} - October 21, 2023";
 
-        if (howManywordsYouGot == 0)
-        {
-            epitaphOnStone.text = currentEpitaph01 +  " NOTHING\n" + currentEpitaph02 + " NOTHING\n" + currentEpitaph03 + " NOTHING";
-        }
-        else if (howManywordsYouGot <= 3)
-        {
-            epitaphOnStone.text = currentEpitaph01 + "\n" + currentEpitaph02 + " NOTHING\n" + currentEpitaph03 + " NOTHING";
-        }
-        else if(howManywordsYouGot <= 6)
-        {
-            epitaphOnStone.text = currentEpitaph01 + "\n" + currentEpitaph02 + "\n" + currentEpitaph03 + " NOTHING";
-        }
-        else
-        {
-            epitaphOnStone.text = currentEpitaph01 + "\n" + currentEpitaph02 + "\n" + currentEpitaph03;
-        }
+        
         end = true;
         gameObject.SetActive(false);
     }

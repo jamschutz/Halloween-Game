@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CollideWithWords : MonoBehaviour
 {
-    public static bool addedAtLeastOneWord;
     public string theWord;
+    public bool isNoun;
 
     private EpitaphManager epitaphManager;
     private GameObject words;
@@ -19,23 +19,21 @@ public class CollideWithWords : MonoBehaviour
         epitaphManager = GameObject.Find("epitaphText").GetComponent<EpitaphManager>();
         words = transform.Find("Words").gameObject;
         words.GetComponent<TextMeshPro>().text = theWord;
-        addedAtLeastOneWord = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player" && !added)
         {
-            if (!addedAtLeastOneWord)
+            if (isNoun)
             {
                 newWords = " " + theWord;
-                addedAtLeastOneWord = true;
             }
             else
             {
                 newWords = " " + theWord;
             }
-            epitaphManager.AddNewWords(newWords);
+            epitaphManager.AddNewWords(newWords,isNoun);
             added = true;
             words.SetActive(false);
         }

@@ -28,14 +28,17 @@ public class GenerateLevel : MonoBehaviour
     private GameObject player;
     private float wholePlatformScaling;
     private float cylinderScaling;
+    private int wordCount;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
+        wordCount = 0;
         LoadWords();
         foreach (string word in words)
         {
+            wordCount++;
+
             GameObject wordBricks = Instantiate(wordBrickPrefab);
             wordBricks.GetComponent<CollideWithWords>().theWord = word;
             wordBricks.transform.position = new Vector3(
@@ -45,6 +48,11 @@ public class GenerateLevel : MonoBehaviour
 
             wholePlatformScaling = Random.Range(groundScalingMax, groundScalingMin);
             wordBricks.transform.localScale = new Vector3(wholePlatformScaling, wholePlatformScaling, wholePlatformScaling);
+
+            if(wordCount< numNouns)
+            {
+                wordBricks.GetComponent<CollideWithWords>().isNoun = true;
+            }
 
             GameObject cylinder = wordBricks.transform.Find("Cylinder").gameObject;
             matIndex = Random.Range(0, mat.Length);
