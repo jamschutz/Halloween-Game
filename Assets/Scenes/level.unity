@@ -15075,8 +15075,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.83
-  m_fontSizeBase: 0.83
+  m_fontSize: 0.59
+  m_fontSizeBase: 0.59
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -21538,7 +21538,7 @@ MonoBehaviour:
   inputText: {fileID: 81559337}
   nameText: {fileID: 1026746297}
   mainCamera: {fileID: 683715995}
-  secondsYouCanPlay: 120
+  secondsYouCanPlay: 10
   timerText: {fileID: 293490696}
 --- !u!4 &2003356029
 Transform:

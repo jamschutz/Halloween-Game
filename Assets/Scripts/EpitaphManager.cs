@@ -40,7 +40,7 @@ public class EpitaphManager : MonoBehaviour
         date = GameObject.Find("date").GetComponent<TextMeshPro>();
         epitaphOnStone = GameObject.Find("epitaphOnStone").GetComponent<TextMeshPro>();
 
-        //pick three
+        //randomize
         epitaphTemplateIndex = new int[epitaphTemplate.Length];
 
         for (int i = 0; i < epitaphTemplate.Length; i++)
@@ -88,7 +88,7 @@ public class EpitaphManager : MonoBehaviour
             string newLine;
             newLine = newWords + ".\n" + epitaphTemplate[howManyEpitaphsYouGot];
             currentEpitaph += newLine;
-            displayWordCorountine = StartCoroutine(TypeOutNewWords(newLine));
+            displayWordCorountine = StartCoroutine(TypeOutNewWords(newLine+ underLine));
         }
         else
         {
@@ -99,9 +99,11 @@ public class EpitaphManager : MonoBehaviour
             }
 
             currentEpitaph += newWords;
-            displayWordCorountine = StartCoroutine(TypeOutNewWords(newWords));
-        }
+            displayWordCorountine = StartCoroutine(TypeOutNewWords(newWords+ underLine));
 
+            
+        }
+        
     }
 
     public IEnumerator TypeOutNewWords(string line)
@@ -115,16 +117,16 @@ public class EpitaphManager : MonoBehaviour
         
     }
 
-    public void ShowLine01()
+    public void ShowLineWithUnderline()
     {
-        epitaphText.text = currentEpitaph + underLine + underLine + underLine;
+        epitaphText.text = currentEpitaph + underLine;
     }
 
 
     public void EndGame()
     {
         if(end) return;
-        
+        epitaphOnStone.text = currentEpitaph;
         timerText.SetActive(false);
         howToPlay.SetActive(false);
         player.SetActive(false);

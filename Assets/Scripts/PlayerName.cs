@@ -54,7 +54,7 @@ public class PlayerName : MonoBehaviour
     private void StartTheGame()
     {
         levelGenerator.enabled = true;
-        epitaphManager.ShowLine01();
+        epitaphManager.ShowLineWithUnderline();
         tempPlayerController.enabled = true;
         mainCamera.gameObject.SetActive(true);
         secondCamera.gameObject.SetActive(false);
