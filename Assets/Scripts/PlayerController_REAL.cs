@@ -46,11 +46,13 @@ public class PlayerController_REAL : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddRelativeForce(movingSpeed, 0, 0);
+            // rb.AddRelativeForce(movingSpeed, 0, 0);
+            angleY += turnForce * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddRelativeForce(-movingSpeed, 0, 0);
+            // rb.AddRelativeForce(-movingSpeed, 0, 0);
+            angleY -= turnForce * Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -62,13 +64,13 @@ public class PlayerController_REAL : MonoBehaviour
 
 
         // rotate left
-        if(Input.GetKey(KeyCode.LeftArrow)) {
-            angleY -= turnForce * Time.deltaTime;
-        }        
-        // rotate right
-        if(Input.GetKey(KeyCode.RightArrow)) {
-            angleY += turnForce * Time.deltaTime;
-        }
+        // if(Input.GetKey(KeyCode.LeftArrow)) {
+        //     angleY -= turnForce * Time.deltaTime;
+        // }        
+        // // rotate right
+        // if(Input.GetKey(KeyCode.RightArrow)) {
+        //     angleY += turnForce * Time.deltaTime;
+        // }
         // // rotate up
         // if(Input.GetKey(KeyCode.UpArrow)) {
         //     angleX -= turnForce * Time.deltaTime;
