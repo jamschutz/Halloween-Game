@@ -26,6 +26,7 @@ public class CollideWithWords : MonoBehaviour
     {
         if(other.tag == "Player" && !added)
         {
+            sound.Play();
             if (isNoun)
             {
                 newWords = " " + theWord;
@@ -36,7 +37,7 @@ public class CollideWithWords : MonoBehaviour
             }
             epitaphManager.AddNewWords(newWords,isNoun);
             added = true;
-            sound.Play();
+            
             words.SetActive(false);
         }
     }
