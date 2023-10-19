@@ -650,7 +650,18 @@ MonoBehaviour:
   - WAS REMEMBERED AS A
   - LOVES
   - HATES
-  - USED TO
+  - REST IN
+  - HAS BECOME
+  - DIED FOR
+  - COMMEMORATED BY
+  - BELONGS WITH
+  - YEARNS FOR
+  - THE INVENTOR OF
+  - DESTROYER OF
+  - ALWAYS HOLDING
+  - IS BURIED WITH
+  - IS ALWAYS MISTAKEN FOR
+  - FAMOUS FOR
   typingSpeed: 0.15
   currentEpitaph: 
   underLine: ' _____ '
@@ -9238,7 +9249,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 39b2821f0e0d78e4ab5d25d9bcae9614, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 80f49cf7a863fe0429528f62d30cbac5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -21538,7 +21549,7 @@ MonoBehaviour:
   inputText: {fileID: 81559337}
   nameText: {fileID: 1026746297}
   mainCamera: {fileID: 683715995}
-  secondsYouCanPlay: 10
+  secondsYouCanPlay: 120
   timerText: {fileID: 293490696}
 --- !u!4 &2003356029
 Transform:

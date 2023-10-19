@@ -6,15 +6,15 @@ king
 creator
 enthusiasm
 motivation
-enthusiasm
-motivation
+dictionary
+statue
 game
 rabbit
 toast
 breakfast
 Pants
 hatred
-like
+star
 friendship
 Body
 Stone
@@ -24,7 +24,7 @@ Mountain
 sun
 beach
 music
-record
+scholar
 School
 Child
 elder
@@ -49,7 +49,7 @@ friend
 breeze
 fear
 pain
-slave
+kid
 ruler
 survivor
 peace
@@ -58,3 +58,94 @@ forest
 trees
 time
 scar
+follower
+employee
+nation
+girlfriend
+boyfriend
+trash
+Paris
+monster truck
+Saxophone
+Reunion
+spanish flu
+sunglasses
+Kungfu master
+silver dollar
+cube
+earplug
+painting
+bubblegum
+foam finger
+football field
+cartwheel
+knee
+cat
+goose
+bottle
+balloon
+pillow
+bedroom
+t shirt
+bicycle wheel
+bazooka
+mood
+secret
+keycodes
+neighbour
+belt buckle
+uncle
+microwave
+freckle
+flavor
+adjunct
+spoon
+ice cream
+quality
+theory
+getaway car
+miracle
+bottlerocket
+tragedy
+joke
+film
+catastrophe
+baking soda
+jazz
+exercise
+keyboard
+glass
+soda
+philosophy
+Venus
+astronomy
+shakespeare
+tom cruise
+tennis
+wendy
+cram school
+quincy
+wizard
+dirt
+manga
+superhero
+researcher
+chicken nugget
+swimming cap
+stomach pill
+gate
+helmet
+ointment
+cloud
+doubt
+hobby
+appetizer
+shoe
+gas
+tax evasion
+answer
+light
+nepotism
+ring finger
+crime
+name
