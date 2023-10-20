@@ -7508,12 +7508,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.6
+  m_fontSize: 0.8
   m_fontSizeBase: 0.6
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0
+  m_fontSizeMax: 0.8
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -7544,7 +7544,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 9.111264, y: 1.4457936, z: 9.958645, w: 3.0022247}
+  m_margin: {x: 9.111264, y: 1.4457936, z: 9.958645, w: 2.9574122}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -15164,7 +15164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.769}
+  m_AnchoredPosition: {x: 0, y: -0.643}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1529018426
@@ -15222,7 +15222,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -15250,7 +15250,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 9.0675955, y: 1.5913466, z: 9.915252, w: 2.5044553}
+  m_margin: {x: 9.0675955, y: 2.1331754, z: 9.915252, w: 2.7464724}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -21711,13 +21711,13 @@ MonoBehaviour:
   verbsFile: {fileID: 4900000, guid: 542be675ab2250a4e8acd285a757f06a, type: 3}
   adjectivesFile: {fileID: 4900000, guid: 60ccc5ffc1bdaac479d026d2c711d8ba, type: 3}
   prepositionsFile: {fileID: 4900000, guid: 2b226c08367c0c243b32e1a523a7c9d2, type: 3}
-  numNouns: 30
+  numNouns: 60
   numVerbs: 0
   numAdjectives: 60
   numPrepositions: 0
   wordBrickPrefab: {fileID: 4168081070070220643, guid: f268def02d55aa24199d4560438fccc1, type: 3}
   levelRangeX: 100
-  levelRangeY: 1000
+  levelRangeY: 1500
   levelRangeZ: 100
   groundScalingMax: 3
   groundScalingMin: 0.5
