@@ -31,6 +31,7 @@ public class EpitaphManager : MonoBehaviour
     private TextMeshPro epitaphOnStone;
     private TextMeshPro date;
     private DateTime earliestDate = new DateTime(1887, 1, 1);
+    private AudioSource typingSound;
 
     private void Start()
     {
@@ -39,6 +40,7 @@ public class EpitaphManager : MonoBehaviour
         secondCamera = GameObject.Find("secondCamera").GetComponentInParent<Camera>();
         date = GameObject.Find("date").GetComponent<TextMeshPro>();
         epitaphOnStone = GameObject.Find("epitaphOnStone").GetComponent<TextMeshPro>();
+        typingSound = GameObject.Find("typingSound").GetComponent<AudioSource>();
 
         //randomize
         epitaphTemplateIndex = new int[epitaphTemplate.Length];
@@ -111,6 +113,7 @@ public class EpitaphManager : MonoBehaviour
         foreach (char c in line.ToCharArray())
         {
             epitaphText.text += c;
+            typingSound.Play();
             yield return new WaitForSeconds(typingSpeed);
         }
 
