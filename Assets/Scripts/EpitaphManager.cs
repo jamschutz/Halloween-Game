@@ -26,6 +26,7 @@ public class EpitaphManager : MonoBehaviour
     private Coroutine displayWordCorountine;
     private bool end;
     private int rand;
+    public int numWordsOnLine;
     private GameObject player;
     private Camera secondCamera;
     private TextMeshPro epitaphOnStone;
@@ -44,6 +45,7 @@ public class EpitaphManager : MonoBehaviour
 
         //randomize
         epitaphTemplateIndex = new int[epitaphTemplate.Length];
+        numWordsOnLine = 0;
 
         for (int i = 0; i < epitaphTemplate.Length; i++)
         {
@@ -74,6 +76,7 @@ public class EpitaphManager : MonoBehaviour
         if (end) return;
 
         howManywordsYouGot++;
+        numWordsOnLine++;
 
         epitaphText.text = currentEpitaph;
 
@@ -91,6 +94,7 @@ public class EpitaphManager : MonoBehaviour
             newLine = newWords + ".\n" + epitaphTemplate[howManyEpitaphsYouGot];
             currentEpitaph += newLine;
             displayWordCorountine = StartCoroutine(TypeOutNewWords(newLine+ underLine));
+            numWordsOnLine = 0;
         }
         else
         {
@@ -129,6 +133,9 @@ public class EpitaphManager : MonoBehaviour
     public void EndGame()
     {
         if(end) return;
+        if(numWordsOnLine == 0) {
+            currentEpitaph += " NOTHING";
+        }
         epitaphOnStone.text = currentEpitaph;
         timerText.SetActive(false);
         howToPlay.SetActive(false);

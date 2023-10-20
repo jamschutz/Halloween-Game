@@ -38,19 +38,19 @@ public class PlayerController_REAL : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            rb.AddRelativeForce(0, 0, movingSpeed);
+            rb.AddRelativeForce(0, 0, movingSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            rb.AddRelativeForce(0, 0, -movingSpeed);
+            rb.AddRelativeForce(0, 0, -movingSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddRelativeForce(movingSpeed, 0, 0);
+            rb.AddRelativeForce(movingSpeed * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rb.AddRelativeForce(-movingSpeed, 0, 0);
+            rb.AddRelativeForce(-movingSpeed * Time.deltaTime, 0, 0);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
